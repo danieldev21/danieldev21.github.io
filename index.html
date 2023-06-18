@@ -50,7 +50,7 @@
         }
 
         @keyframes spin {
-             0% {
+            0% {
                 transform: rotate(0deg);
             }
 
@@ -58,23 +58,7 @@
                 transform: rotate(360deg);
             }
         }
-    </style>
-</head>
 
-<body>
-    <div id="intro-container">
-        <h1 id="intro-text">Bem-vindo(a) ao SUPRESAR!</h1>
-        <div id="intro-spinner"></div>
-    </div>
-
-    <div id="conteudo" class="hidden">
-        <h2>E Para a Garota mais Incrível que eu já encontrei, o Pedido de Namoro mais Diferenciado de todos!</h2>
-        <h2>Aceita namorar comigo?</h2>
-        <button class="btn sim-btn" onclick="exibirFogos()">SIM</button>
-        <button class="btn nao-btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
-    </div>
-
-    <style>
         body {
             background: #f5f5f5;
         }
@@ -142,6 +126,20 @@
             z-index: 9999;
         }
     </style>
+</head>
+
+<body>
+    <div id="intro-container">
+        <h1 id="intro-text">Bem-vindo(a) ao SUPRESAR!</h1>
+        <div id="intro-spinner"></div>
+    </div>
+
+    <div id="conteudo" class="hidden">
+        <h2>E Para a Garota mais Incrível que eu já encontrei, o Pedido de Namoro mais Diferenciado de todos!</h2>
+        <h2>Aceita namorar comigo?</h2>
+        <button class="btn sim-btn" onclick="exibirFogos()">SIM</button>
+        <button class="btn nao-btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
@@ -174,11 +172,11 @@
                 retina_detect: true
             });
 
-            exibirMensagem("Eu sabia que faria a escolha certa! ❤️");
-            abrirVideoParabens();
+            exibirMensagemComVideo();
         }
 
-        function exibirMensagem(mensagem) {
+        function exibirMensagemComVideo() {
+            var mensagem = "Eu sabia que faria a escolha certa! ❤️";
             var divMensagem = document.createElement("div");
             divMensagem.textContent = mensagem;
             divMensagem.classList.add("romantic-message");
@@ -186,7 +184,8 @@
 
             setTimeout(function () {
                 divMensagem.remove();
-            }, 1000); // Defina o tempo em milissegundos (1000 = 1 segundo)
+                abrirVideoParabens();
+            }, 3000); // Defina o tempo em milissegundos (3000 = 3 segundos)
         }
 
         function abrirVideoParabens() {
