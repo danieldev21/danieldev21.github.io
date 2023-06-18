@@ -202,6 +202,17 @@
         function geraPosicao(min, max) {
             return Math.random() * (max - min) + min + "%";
         }
+
+        function exibirMensagem(mensagem) {
+            var divMensagem = document.createElement("div");
+            divMensagem.textContent = mensagem;
+            divMensagem.classList.add("romantic-message");
+            document.body.appendChild(divMensagem);
+
+            setTimeout(function () {
+                divMensagem.remove();
+            }, 3000); // Defina o tempo em milissegundos (3000 = 3 segundos)
+        }
     </script>
 </body>
 
